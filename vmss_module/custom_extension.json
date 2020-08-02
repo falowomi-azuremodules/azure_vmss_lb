@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "type": "string",
+            "metadata": {
+                "description": "VM Name"
+                }
+            }		
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachineScaleSets/extensions",
+            "apiVersion": "2019-07-01",
+            "name": "[concat(parameters('vmName'),'/', 'InstallApacheWithSite')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.1",
+                "autoUpgradeMinorVersion":true,
+                "settings": {
+                  "fileUris": [
+                    "https://raw.githubusercontent.com/falowomi-azuremodules/azure_modules/master/auto_script.sh"
+                  ],
+                  "commandToExecute": "bash auto_script.sh"
+                }
+            }
+        }
+    ]
+}
