@@ -4,7 +4,7 @@ Virtual Machine Scale Set behind a Load Balancer and a test site with Hello Worl
 
 To deploy using this repo, please following the steps listed below
 
-* Clone the entire repo *"**git clone https://github.com/falowomi-azuremodules/azure_vmss_lb azure_vmss_lb**"*
+* Clone the entire repo *"**git clone https://github.com/falowomi-azuremodules/azure_vmss_lb.git azure_vmss_lb**"*
 * Change directory to vmss_module *"**cd azure_vmss_lb/vmss_module**"*
 * Modify the deploy.tfvars file with the values or your choosing.
 * Run terraform commands initialization *"**terraform init**"*
