@@ -1,5 +1,5 @@
 module "deploy_vmss_stack" {
-  source                                                                  = "../vmss_library"
+  source                                                                  = "git::https://github.com/falowomi-azuremodules/azure_vmss_lb.git//vmss_library"
 
   req_rg_name                                                             = var.res_rg_name
   req_rg_location                                                         = var.res_rg_location

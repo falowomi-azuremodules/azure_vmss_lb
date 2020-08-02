@@ -22,7 +22,7 @@
                 "autoUpgradeMinorVersion":true,
                 "settings": {
                   "fileUris": [
-                    "https://raw.githubusercontent.com/falowomi-azuremodules/azure_modules/master/auto_script.sh"
+                    "https://raw.githubusercontent.com/falowomi-azuremodules/azure_vmss_lb/master/vmss_library/install.sh"
                   ],
                   "commandToExecute": "bash auto_script.sh"
                 }
