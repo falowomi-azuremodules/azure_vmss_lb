@@ -104,29 +104,15 @@ variable "res_vmss_info" {
   description = "Virtual Machine Scale Set Info"
 }
 
-variable "res_autoscale_info_autoscale_name" {
-  type = string
-  description = "VMSS Autoscaling Name"
-}
-
-variable "res_autoscale_info_autoscale_profile_name" {
-  type = string
-  description = "VMSS Autoscaling Profile Name"
-}
-
-variable "res_autoscale_info_autoscale_profile_capacity_default" {
-  type = string
-  description = "VMSS Autoscaling Profile Capacity Default"
-}
-
-variable "res_autoscale_info_autoscale_profile_capacity_minimum" {
-  type = string
-  description = "VMSS Autoscaling Profile Capacity Minimum"
-}
-
-variable "res_autoscale_info_autoscale_profile_capacity_maximum" {
-  type = string
-  description = "VMSS Autoscaling Profile Capacity Maximum"
+variable "res_autoscale_info" {
+  type = object({
+    autoscale_name                      = string
+    autoscale_profile_name              = string
+    autoscale_profile_capacity_default  = number
+    autoscale_profile_capacity_minimum  = number
+    autoscale_profile_capacity_maximum  = number
+  })
+  description = "VMSS Autoscaling Info"
 }
 
 variable "res_autoscale_profile_info" {

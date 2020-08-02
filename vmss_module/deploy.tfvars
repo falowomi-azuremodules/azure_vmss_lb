@@ -86,11 +86,13 @@ res_vmss_info = {
   vmss_nic_pip_domain_name_label                                        = "testazurepiptest"
 }
 
-res_autoscale_info_autoscale_name                                       = "test_autoscaling"
-res_autoscale_info_autoscale_profile_name                               = "defaultProfile"
-res_autoscale_info_autoscale_profile_capacity_default                   = 1
-res_autoscale_info_autoscale_profile_capacity_minimum                   = 1
-res_autoscale_info_autoscale_profile_capacity_maximum                   = 4
+res_autoscale_info = {
+  autoscale_name                                                        = "test_autoscaling"
+  autoscale_profile_name                                                = "defaultProfile"
+  autoscale_profile_capacity_default                                    = 1
+  autoscale_profile_capacity_minimum                                    = 1
+  autoscale_profile_capacity_maximum                                    = 4
+}
 
 res_autoscale_profile_info = [
   {

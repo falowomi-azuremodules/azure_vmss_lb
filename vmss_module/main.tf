@@ -68,11 +68,11 @@ module "deploy_vmss_stack" {
   }
 
   req_autoscale_info = {
-    autoscale_name                                                        = var.res_autoscale_info_autoscale_name
-    autoscale_profile_name                                                = var.res_autoscale_info_autoscale_profile_name
-    autoscale_profile_capacity_default                                    = var.res_autoscale_info_autoscale_profile_capacity_default
-    autoscale_profile_capacity_minimum                                    = var.res_autoscale_info_autoscale_profile_capacity_minimum
-    autoscale_profile_capacity_maximum                                    = var.res_autoscale_info_autoscale_profile_capacity_maximum
+    autoscale_name                                                        = var.res_autoscale_info.autoscale_name
+    autoscale_profile_name                                                = var.res_autoscale_info.autoscale_profile_name
+    autoscale_profile_capacity_default                                    = var.res_autoscale_info.autoscale_profile_capacity_default
+    autoscale_profile_capacity_minimum                                    = var.res_autoscale_info.autoscale_profile_capacity_minimum
+    autoscale_profile_capacity_maximum                                    = var.res_autoscale_info.autoscale_profile_capacity_maximum
   }
 
   req_autoscale_profile_info                                              = var.res_autoscale_profile_info
