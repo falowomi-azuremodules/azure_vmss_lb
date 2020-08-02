@@ -183,26 +183,26 @@ resource "azurerm_monitor_autoscale_setting" "autoscaling" {
       maximum                                                                           = var.req_autoscale_info.autoscale_profile_capacity_maximum
     }
 
-    dynamic "rules" {
+    dynamic "rule" {
       for_each                                                                          = var.req_autoscale_profile_info
 
       content {
         metric_trigger {
-          metric_name                                                                   = rules.value.profile_rules_metric_name
+          metric_name                                                                   = rule.value.profile_rules_metric_name
           metric_resource_id                                                            = azurerm_linux_virtual_machine_scale_set.vmss.id
-          time_grain                                                                    = rules.value.profile_rules_time_grain
-          statistic                                                                     = rules.value.profile_rules_statistic
-          time_window                                                                   = rules.value.profile_rules_time_window
-          time_aggregation                                                              = rules.value.profile_rules_time_aggregation
-          operator                                                                      = rules.value.profile_rules_operator
-          threshold                                                                     = rules.value.profile_rules_threshold
+          time_grain                                                                    = rule.value.profile_rules_time_grain
+          statistic                                                                     = rule.value.profile_rules_statistic
+          time_window                                                                   = rule.value.profile_rules_time_window
+          time_aggregation                                                              = rule.value.profile_rules_time_aggregation
+          operator                                                                      = rule.value.profile_rules_operator
+          threshold                                                                     = rule.value.profile_rules_threshold
         }
 
         scale_action {
-          direction                                                                     = rules.value.profile_rules_direction
-          type                                                                          = rules.value.profile_rules_type
-          value                                                                         = rules.value.profile_rules_value
-          cooldown                                                                      = rules.value.profile_rules_cooldown
+          direction                                                                     = rule.value.profile_rules_direction
+          type                                                                          = rule.value.profile_rules_type
+          value                                                                         = rule.value.profile_rules_value
+          cooldown                                                                      = rule.value.profile_rules_cooldown
         }
       }
     }
